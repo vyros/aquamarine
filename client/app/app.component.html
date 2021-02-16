@@ -1,0 +1,35 @@
+<!--cookie-law position="top" name="ng4topCookieLaw">
+  Allo! This is my awesome cookie-law message.
+  <a href="https://github.com/andreasonny83/angular2-cookie-law">
+    Click here for more info
+  </a>
+</cookie-law-->
+<nav-bar [title]="getTitle()"></nav-bar>
+<jumbotron [title]="getTitle()"></jumbotron>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <div *ngIf="successes.length" class="alert alert-success alert-dismissable">
+                <a href="#" (click)="clrSuccesses()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <div *ngFor="let success of successes">
+                    <p [innerHtml]="success"></p>
+                </div>
+            </div>
+            <div *ngIf="errors.length" class="alert alert-danger alert-dismissable">
+                <a href="#" (click)="clrErrors()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <div *ngFor="let error of errors">
+                    <p [innerHtml]="error"></p>
+                </div>
+            </div>
+            <div *ngIf="infos.length" class="alert alert-info alert-dismissable">
+                <a href="#" (click)="clrInfos()" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <div *ngFor="let info of infos">
+                    <p [innerHtml]="info"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<app-footer [title]="getTitle()"></app-footer>
+<ng-progress [color]="getProgressColor()" [showSpinner]="getProgressSpinner()"></ng-progress>

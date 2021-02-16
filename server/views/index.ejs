@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="/" />
+        <title>benjardin.fr</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="public/libs/font-awesome/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="public/stylesheets/style.css" />
+        <link rel="stylesheet" href="public/stylesheets/spinner.css" />
+        
+        <!-- Polyfill(s) for older browsers -->
+        <script src="node_modules/core-js/client/shim.min.js"></script>
+
+        <script src="node_modules/zone.js/dist/zone.js"></script>
+        <script src="node_modules/systemjs/dist/system.src.js"></script>
+
+        <script src="systemjs.config.js"></script>
+        <script>
+            System.import('main.js').catch(function(err){ console.error(err); });
+        </script>
+
+        <!-- Scripts -->
+        <script src="public/libs/jquery/dist/jquery.min.js"></script>
+        <script src="public/javascripts/carousel.js"></script>
+
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="public/libs/bootstrap/dist/css/bootstrap.min.css" />
+        <script src="public/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+
+        <!-- Ammap -->
+        <link rel="stylesheet" href="public/libs/ammap3/ammap/ammap.css" />
+        <script src="public/libs/ammap3/ammap/ammap.js"></script>
+        <script src="public/libs/ammap3/ammap/maps/js/worldLow.js"></script>
+        <script src="public/libs/ammap3/ammap/themes/black.js"></script>
+    </head>
+
+    <body>
+        <lbwt onUserUpdated="onUserUpdated($event)">
+            <div class="loading"></div>
+            <div id="background"></div>
+        </lbwt>
+    </body>
+</html>

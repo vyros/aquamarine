@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h2>{{h2}}</h2>
+            <br>
+            <form class="well" (submit)="addBlob($event)">
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="name" name="name" class="form-control" placeholder="Name">
+                    <!--input type="text" [(ngModel)]="badge" name="badge" class="form-control" placeholder="Badge">
+                    <input type="checkbox" [(ngModel)]="isLoved" name="isLoved" class="form-control"-->
+                </div>
+            </form>
+
+            <div class="blob-list">
+                <div *ngFor="let blob of blobs">
+                    <div class="col-md-1">
+                        <input type="checkbox" [checked]="blob.isLoved" (click)="updateLoved(blob)">
+                    </div>
+                    <div class="col-md-7">
+                        {{blob.name}}
+                    </div>
+                    <div class="col-md-4">
+                        <input (click)="deleteBlob(blob._id)" class="btn btn-danger" type="button" value="Delete">
+                    </div>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

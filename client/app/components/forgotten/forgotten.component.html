@@ -1,0 +1,24 @@
+<div class="container">
+    <div *ngIf="!user" class="row">
+        <div class="col-lg-8">
+            <h2>{{h2}}</h2>
+            <br>
+            <form class="well" (submit)="forgotten($event)">
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Email</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="email" 
+                               [(ngModel)]="email" name="email" placeholder="Email" /><br>
+                    </div>
+                </div>
+                <input class="form-control btn btn-primary" disabled="{{buttonDisabled}}" 
+                    type="submit" value="Récupérer" />
+            </form>
+        </div>
+    </div>
+    <div *ngIf="user">
+        <div class="col-lg-8">
+            <h2>{{h2}}</h2>
+        </div>
+    </div>
+</div>

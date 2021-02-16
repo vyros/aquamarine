@@ -1,0 +1,26 @@
+{
+    "_id":"59069810b1f8bc33902e15b2",
+    "lastName":"Deweer",
+    "firstName":"Jimmy",
+    "email":"vyros@hotmail.fr",
+    "photo":"https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/10522552_10204761105812649_5990516795538679964_n.jpg?oh=f50b4e75a2fbc9148c960a20f1762a22&oe=5991B14E",
+    "username":"vyros",
+    "provider":"facebook",
+    "providerId":"10212737921628059",
+    "providerData": {
+        "id":"10212737921628059",
+        "name":"Jimmy Deweer",
+        "picture": {
+            "data": {
+                "is_silhouette":false,
+                "url":"https://scontent.xx.fbcdn.net/v/t1.0-1/p50x50/10522552_10204761105812649_5990516795538679964_n.jpg?oh=f50b4e75a2fbc9148c960a20f1762a22&oe=5991B14E"
+            }
+        },
+        "email":"vyros@hotmail.fr",
+        "accessToken":"EAACr1YwvRW8BALUVkT6lrz5oE9Qt96TD2RJECt19J6NfvTaHSHOvouISolZBraIiFA3oyRk3Yc9hECy4ZAL1lBZBAXa5TOAO9vzhjFEPQvSGMzoG9gNWdxHlQwZCbRQt4wseAga7PY8rAXPVbYYPkNqmB5xogT0ZD"
+    },
+    "__v":0,
+    "created":"2017-05-01T02:06:08.886Z",
+    "fullName":"Jimmy Deweer",
+    "id":"59069810b1f8bc33902e15b2"
+}

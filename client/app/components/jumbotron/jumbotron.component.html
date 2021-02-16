@@ -1,0 +1,6 @@
+<div class="container">
+    <div class="jumbotron">
+        <h2 *ngIf="user">Welcome to {{title}}, {{user.displayedName}}</h2>
+        <h2 *ngIf="!user">Welcome to {{title}}</h2>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "outDir": "output"
+    },
+    "include": ["./*"],
+    "exclude": ["node_modules"]
+}

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <h2>{{h2}}</h2>
+            <br>
+            <h3>The Hasher Output</h3>
+            <p>
+                The hash you get back isn't a string yet. It's a WordArray object. 
+                When you use a WordArray object in a string context, it's automatically 
+                converted to a hex string.<br>
+                You can convert a WordArray object to other formats by explicitly 
+                calling the toString method and passing an encoder.
+            </p>
+            <form class="well" (submit)="doHash($event)">
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="message" name="message" class="form-control" placeholder="Messsage">
+                </div>
+                <div class="form-group">
+                    <span>Hash Context :&nbsp;{{hashContext}}</span><br>
+                    <span>Hash Hex :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{hashHex}}</span><br>
+                    <span>Hash Base64 :&nbsp;{{hashBase64}}</span><br>
+                    <span>Hash Latin1 :&nbsp;&nbsp;&nbsp;{{hashLatin1}}</span>
+                </div>
+            </form>
+            <h3>Progressive Hashing</h3>
+            <form class="well" (submit)="doProgressive($event)">
+                <div class="form-group">
+                    <input type="text" [(ngModel)]="message" name="message" class="form-control" placeholder="Messsage">
+                </div>
+                <div class="form-group">
+                    <span>1 : {{progressive1._hash}}</span><br>
+                    <span>2 : {{progressive2._hash}}</span><br>
+                    <span>3 : {{progressive3._hash}}</span><br>
+                    <span>F : {{progressiveFinale}}</span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

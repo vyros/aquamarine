@@ -1,0 +1,11 @@
+{
+    "attributes": {
+        "*ngif": {
+            "context": "div"
+        },
+        "routerlink": {
+            "context": "a"
+        }
+    },
+    "elements": {}
+}

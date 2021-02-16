@@ -1,0 +1,114 @@
+<div class="container">
+    <div *ngIf="!user" class="row">
+        <div class="col-lg-8">
+            <h2>{{h2}}</h2>
+        </div>
+    </div>
+    <div *ngIf="user" class="row">
+        <div class="col-lg-8">
+            <h2>{{h2}} <span><em>{{user.provider}}</em></span></h2>
+            <br>
+            <form class="well">
+                <div *ngIf="user.photo" class="form-group">
+                    <img src="{{user.photo}}" style="width: 50px; height: 50px;" alt="Photo" class="img-circle"><br>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="username">Utilisateur</label>
+                    <div class="col-sm-10">
+                        <span class="form-control" >{{user.username}}</span><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="email">Email</label>
+                    <div class="col-sm-10">
+                        <span class="form-control" >{{user.email}}</span><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="firstName">Prénom</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" 
+                               [(ngModel)]="user.firstName" name="firstName" placeholder="Prénom" /><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="lastName">Nom</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" 
+                               [(ngModel)]="user.lastName" name="lastName" placeholder="Nom" /><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="website">Site web</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" type="text" 
+                               [(ngModel)]="user.website" name="website" placeholder="Site web" /><br>
+                    </div>
+                </div>
+                <div *ngIf="user.provider === 'local'" class="form-group">
+                    <label class="control-label col-sm-4" for="displayedAs">Afficher sur le site</label>
+                    <div class="col-sm-8">
+                        <input type="radio" name="displayedAs" 
+                               [(ngModel)]="user.displayedAs" value="fullName" /> Mon nom complet<br>
+                        <input type="radio" name="displayedAs" 
+                               [(ngModel)]="user.displayedAs" value="username" /> Mon utilisateur<br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="photo">Photo</label>
+                    <div class="col-sm-10">
+                        <file-upload class="form-control" #fu (change)="fu.upload($event)"></file-upload><br>
+                    </div>
+                </div>
+                <button (click)="update()" type="button" disabled="{{buttonDisabled}}"
+                    class="form-control btn btn-primary">Enregistrer</button>
+            </form>
+        </div>
+        <div class="col-lg-8">
+            <form class="well">
+                <button (click)="reset()" type="button" class="form-control btn btn-primary">Changer le mot de passe</button><br>
+                <div *ngIf="isReset">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="passwordReset">Mot de passe actuel</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" name="passwordReset" 
+                                   [(ngModel)]="passwordReset" placeholder="Mot de passe actuel" type="password"><br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="password1">Nouveau mot de passe</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" name="password1" 
+                                   [(ngModel)]="password1" placeholder="Nouveau mot de passe" type="password"><br>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="password2">Confirmation</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" name="password2" 
+                                   [(ngModel)]="password2" placeholder="Confirmation" type="password"><br>
+                        </div>
+                    </div>
+                    <button (click)="resetConfirmed()" type="button" disabled="{{buttonDisabled}}"
+                        class="form-control btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-8">
+            <form class="well">
+                <button (click)="delete()" type="button" class="form-control btn btn-primary">Supprimer le compte</button>
+                <div *ngIf="isDelete">
+                    <div class="form-group">
+                        <label class="control-label col-sm-4" for="passwordDelete">Mot de passe</label>
+                        <div class="col-sm-8">
+                            <input class="form-control" name="passwordDelete" 
+                                   [(ngModel)]="passwordDelete" placeholder="Mot de passe" type="password"><br>
+                        </div>
+                    </div>
+                    <button (click)="deleteConfirmed()" type="button" disabled="{{buttonDisabled}}"
+                        class="form-control btn btn-danger">Confirmer la suppression</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
