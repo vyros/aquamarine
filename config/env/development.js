@@ -12,7 +12,6 @@ module.exports = {
         service: 'gmail',
         user: 'j.deweer@gmail.com',
         pass: '',
-        //from: '"vyros.xyz" <noreply@vyros.xyz>'
         from: '"Jimmy Deweer" <j.deweer@gmail.com>'
     },
     facebook: {
